@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win the New iPhone 15 Pro Max - Enter Now!</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff7a00, #ff0000);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header & Title */
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 50px;
+            animation: bounce 1s infinite;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* Button Animations */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+            text-transform: uppercase;
+            animation: pulse 1s infinite;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Input Fields */
+        input[type="text"], input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            animation: pulse 1s infinite;
+            background-color: #f3f3f3;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 30px;
+            animation: bounce 1s infinite;
+        }
+
+        /* Image Styles */
+        .image-container {
+            text-align: center;
+            margin-top: 30px;
+            animation: bounce 1s infinite;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            animation: bounce 1s infinite;
+        }
+
+        /* Pop-up Notification */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        /* Privacy Note */
+        .privacy {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Layout and Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 15px;
+            }
+
+            input[type="text"], input[type="email"] {
+                width: 100%;
+            }
+        }
+
+        /* Security Badge */
+        .security-badge {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .security-badge span {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Form & Countdown */
+        .form-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* iPhone Details Section */
+        .iphone-details {
+            margin-top: 50px;
+            background: #333;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .iphone-details h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .iphone-details p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://i.ibb.co/PhjNfDW/e01b94cf0122.jpg" alt="iPhone 15 Pro Max">
+    </div>
+
+    <h1>Win the New iPhone 15 Pro Max - Enter Now!</h1>
+    <h2>Get a chance to win the latest iPhone 15 Pro Max. Enter now and don't miss out!</h2>
+
+    <div class="form-container">
+        <form id="giveaway-form">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <p class="privacy">We respect your privacy. Your information is safe with us.</p>
+            <button type="submit" class="btn">Enter Giveaway</button>
+        </form>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Time Remaining: <span id="timer">00:00:00</span>
+    </div>
+
+    <div class="security-badge">
+        <span>100% Secure - Your Data is Safe with Us!</span>
+    </div>
+
+    <!-- Pop-up Notification -->
+    <div class="popup" id="popup">John from New York just claimed this offer!</div>
+
+    <!-- iPhone Details Section -->
+    <div class="iphone-details">
+        <h3>iPhone 15 Pro Max - The Ultimate Smartphone</h3>
+        <p>The iPhone 15 Pro Max features a stunning Super Retina XDR display, a powerful A17 Bionic chip, and an advanced camera system that lets you capture photos and videos like never before. With up to 1TB of storage, this device provides ample space for all your apps, photos, and more. Experience the future of technology today with the iPhone 15 Pro Max!</p>
+    </div>
+
+    <script>
+        // Countdown Timer
+        let countdownDate = new Date().getTime() + 1000000000; // Set countdown time
+        let timer = document.getElementById("timer");
+        let countdown = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countdownDate - now;
+
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timer.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                timer.innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+        // Form Validation & Redirection
+        document.getElementById("giveaway-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            if (email === "") {
+                alert("Please enter your email address!");
+            } else {
+                window.location.href = "https://go4affm.com/c/?p=40201&o=18652"; // Add your affiliate link here
+            }
+        });
+
+        // Pop-up notification
+        setTimeout(function() {
+            document.getElementById("popup").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "none";
+            }, 4000);
+        }, 3000);
+    </script>
+</body>
+</html>
